@@ -1,3 +1,5 @@
+const fs = require('node:fs');
+const path = require('node:path');
 const { Client, GatewayIntentBits, Collection, Partials } = require('discord.js');
 const { discord_token } = require('./config/token.json');
 
