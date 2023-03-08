@@ -1,5 +1,5 @@
 const { Client, GatewayIntentBits, Collection, Partials } = require('discord.js');
-const { token } = require('./config/token.json');
+const { discord_token } = require('./config/token.json');
 
 const bot = new Client({
    intents: [
@@ -130,4 +130,4 @@ for (const file of eventFiles) {
 	}
 }
 
-bot.login(token)
+bot.login(discord_token)
