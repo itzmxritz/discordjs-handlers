@@ -3,7 +3,7 @@ const path = require('node:path');
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 const { discord_token } = require('./config/token.json');
-const { guild_id, user_id } = require('./config/token.json');
+const { server_id, user_id } = require('./config/token.json');
 
 const gcommands = [];
 const pcommands = [];
@@ -23,7 +23,7 @@ for (const file of commandFiles) {
 
 const rest = new REST({ version: '10' }).setToken(discord_token);
 
-rest.put(Routes.applicationGuildCommands(user_id, guild_id), { body: pcommands })
+rest.put(Routes.applicationGuildCommands(user_id, server_id), { body: pcommands })
     .then(() => console.log('Successfully registered non-application commands.'))
     .catch(console.error);
 
